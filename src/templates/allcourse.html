@@ -1,0 +1,13 @@
+<html>
+<body>
+        Course Name : {{course}} <br>
+        Students :
+        {% for item in students %}
+    		{{ item.student_name }},
+		{% endfor %}<br>
+		Teachers : 
+		{% for item in teachers %}
+    		{{ item.teacher_name }},
+		{% endfor %}
+</body>
+</html>

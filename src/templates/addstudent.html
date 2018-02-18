@@ -1,0 +1,25 @@
+{% block content %}
+
+<div class='col-sm-6 col-sm-offset-3'>
+<h1>Teacher Name : {{ teacher }}</h1>
+
+<hr/>
+
+<form method='POST' action='' enctype='multipart/form-data'>{% csrf_token %}
+Course :
+<select name="cou_name">
+{% for cou in course %}
+	<option value="{{ cou.course_name }}">{{ cou.course_name }}</option>
+{% endfor %}
+</select><br>
+
+Students :
+<select name="stu_name"> 
+{% for stu in student %}
+	<option value="{{ stu.student_name }}">{{ stu.student_name }}</option>
+{% endfor %}
+</select>
+<input type='submit' class='btn btn-default' value='Add' />
+</form>
+</div>
+{% endblock content %}

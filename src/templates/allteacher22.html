@@ -1,0 +1,21 @@
+<html>
+<body>
+	{% if user.is_authenticated %}
+		<a href="/School3/Teachers3">Back</a><br>
+		<a href="/School3/logout">Logout</a><br>
+		<a href="addstudent">Add Student</a><br>
+	{% endif %}
+        Name : {{name}}<br><br>
+        
+        Courses taken:
+        {% for item in cc %}
+    		{{ item.course_name }}
+		{% endfor %}<br>
+
+		Students :
+
+		{% for s in students %}
+    				{{s.student_name}}
+    	{% endfor %}
+</body>
+</html>

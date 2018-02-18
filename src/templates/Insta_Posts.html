@@ -1,0 +1,33 @@
+{% block content %}
+<a href="/Insta/logout">Logout</a><br>
+<a href="addpost">Add Post</a><br>
+<div class='col-sm-6 col-sm-offset-3'>
+    <h1>{{ username }}</h1>
+    
+{% for obj in follow %}
+  {% if obj != user %}
+        {{ obj.username }} <a href="{{obj.id}}" >Follow</a><br>
+  {% endif %}
+{% endfor %} 
+    
+{% for obj in userpost %}
+
+<div class="row">
+  <div class="col-sm-12">
+    <div class="thumbnail">
+        {% if obj.post_photo %}
+         <img src='{{ obj.post_photo.url }}' class='img-responsive' height="300" width="300"/>
+        {% endif %}
+      <div class="caption">
+        <h3>{{ obj.post }} <small>{{ obj.timestamp|timesince }} ago</small></h3>
+        
+      </div>
+    </div>
+  </div>
+<hr/>
+</div>
+{% endfor %}
+
+</div>
+   
+{% endblock content %}

@@ -1,0 +1,48 @@
+from django.conf.urls import url
+from django.contrib import admin
+from .views import(
+	# all_student,
+	# all_course,
+	# all_teacher,
+	# test,
+	# stu_info,
+	# tea_info,
+	test,
+	all_student22,
+	all_student3,
+	all_course22,
+	all_teacher22,
+	all_teacher3,
+	stu_info22,
+	cou_info22,
+	stu_info3,
+	tea_info22,
+	tea_info3,
+	addteacher_info,
+	login_view,
+	register_view,
+	logout_view
+	)
+
+urlpatterns = [
+	url(r'^$', test),
+    # url(r'^Students/$', all_student),
+    # url(r'^Courses/$', all_course),
+    # url(r'^Teachers/$', all_teacher),
+    # url(r'^Students/(?P<username>\w{1,50})/$', stu_info),
+    # url(r'^Teachers/(?P<teachername>\w{1,50})/$', tea_info),
+    url(r'^Students22/$', all_student22),
+    url(r'^Students3/$', all_student3),
+    url(r'^Courses22/$', all_course22),
+    url(r'^Teachers3/$', all_teacher3),
+    url(r'^Teachers22/$', all_teacher22),
+    url(r'^Courses22/(?P<coursename>\w{1,50})/$', cou_info22),
+    url(r'^Students22/(?P<username>\w{1,50})/$', stu_info22),
+    url(r'^Students3/(?P<username>\w{1,50})/$', stu_info3),
+    url(r'^Teachers22/(?P<teachername>\w{1,50})/$', tea_info22),
+    url(r'^Teachers3/(?P<teachername>\w{1,50})/$', tea_info3),
+    url(r'^Teachers3/(?P<teachername>\w{1,50})/addstudent/$', addteacher_info),
+    url(r'^login/', login_view,name='login'),
+    url(r'^register/', register_view,name='register'),
+    url(r'^logout/', logout_view,name='logout'),
+]
